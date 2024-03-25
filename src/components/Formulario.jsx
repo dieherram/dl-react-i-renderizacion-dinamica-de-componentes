@@ -1,4 +1,5 @@
 import { useState } from "react"
+import Alert from "./Alert"
 
 const Formulario = ({ baseColaboradores, setBaseColaboradores, setAlert }) => {
 
@@ -23,7 +24,7 @@ const Formulario = ({ baseColaboradores, setBaseColaboradores, setAlert }) => {
       setAlert({ error: true, msj: "Completa todos los campos !", color: "danger" })
       return
     } else {
-      setBaseColaboradores([...baseColaboradores, { id: "", nombre: colaborador.nombre, correo: colaborador.correo, edad: colaborador.edad, cargo: colaborador.cargo, telefono: colaborador.telefono }])
+      setBaseColaboradores([...baseColaboradores, { id: Date.now(), nombre: colaborador.nombre, correo: colaborador.correo, edad: colaborador.edad, cargo: colaborador.cargo, telefono: colaborador.telefono }])
       setAlert({ error: true, msj: "Colaborador agregado !", color: "success" })
       limpiarInputs()
     }
@@ -49,7 +50,7 @@ const Formulario = ({ baseColaboradores, setBaseColaboradores, setAlert }) => {
         <div className="mb-3">
           <input type="text" className="form-control" name="telefono" placeholder="Teléfono del colaborador" value={colaborador.telefono} onChange={handleChange} />
         </div>
-        <button type="submit" className="btn btn-primary">Agregar colaborador</button>
+        <button type="submit" className="btn btn-primary w-100">Agregar colaborador</button>
       </form>
     </div>
   )

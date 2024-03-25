@@ -2,7 +2,7 @@
 const Listado = ({ baseColaboradores }) => {
   return (
     <div className="listado-container">
-      <table className="table table-striped">
+      <table className="table table-striped text-center border">
         <thead>
           <tr>
             <th scope="col">Nombre</th>
@@ -15,7 +15,7 @@ const Listado = ({ baseColaboradores }) => {
         <tbody>
           {baseColaboradores.map(colaborador =>
           (
-            <tr>
+            <tr key={colaborador.id}>
               <td>{colaborador.nombre}</td>
               <td>{colaborador.correo}</td>
               <td>{colaborador.edad}</td>
