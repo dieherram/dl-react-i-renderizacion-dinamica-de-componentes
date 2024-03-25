@@ -1,5 +1,4 @@
 import { useState } from "react"
-import Alert from "./Alert"
 
 const Formulario = ({ baseColaboradores, setBaseColaboradores, setAlert }) => {
 
